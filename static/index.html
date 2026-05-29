@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Motor IA Production-Ready al nivel de Claude Opus - Gratuito, rápido y potente">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="robots" content="index, follow">
+    
+    <title>AI Engine - Motor IA Production-Ready | Gratuito como Claude</title>
+    
+    <!-- Preconnect para optimización -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts con display=swap para mejor CLS -->
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230f172a' width='100' height='100'/><text x='50' y='70' font-size='70' font-weight='bold' fill='%2360a5fa' text-anchor='middle'>AI</text></svg>">
+    
+    <!-- Estilos inline para mejor rendimiento (Critical CSS) -->
+    <style>
+        /* Reset y Variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #60a5fa;
+            --accent-dark: #3b82f6;
+            --success: #10b981;
+            --error: #ef4444;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --border: #334155;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Instrument Sans', sans-serif;
+            background: linear-gradient(135deg, var(--primary) 0%, #1a2f4d 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 { font-weight: 700; }
+        h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+        h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
+        h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); }
+
+        code { font-family: 'JetBrains Mono', monospace; }
+
+        /* Utilidades */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            width: 100%;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+    </style>
+    
+    <!-- Cargar CSS externo (non-blocking) -->
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container nav-container">
+                <div class="logo">
+                    <span class="logo-icon">⚡</span>
+                    <span class="logo-text">AI Engine</span>
+                </div>
+                <button class="menu-toggle" aria-label="Abrir menú">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#demo">Demo</a></li>
+                    <li><a href="#características">Características</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero" id="inicio">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>Motor IA Production-Ready</h1>
+                    <p class="hero-subtitle">Al nivel de Claude Opus, totalmente gratuito</p>
+                    <p class="hero-description">
+                        Arquitectura neural completa con funciones de activación optimizadas, 
+                        pesos inteligentes y deployment listo para producción
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#demo" class="btn btn-primary" aria-label="Ir a la demo">
+                            Prueba Ahora
+                        </a>
+                        <a href="https://github.com/Yeremyyy/AI-Practice" class="btn btn-secondary" aria-label="Ver en GitHub">
+                            Ver en GitHub ↗
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-graphic">
+                    <div class="neural-network">
+                        <div class="neuron"></div>
+                        <div class="neuron"></div>
+                        <div class="neuron"></div>
+                        <div class="neuron"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demo Section -->
+        <section class="demo" id="demo">
+            <div class="container">
+                <h2>Prueba el Motor IA</h2>
+                <p class="section-subtitle">Generación con IA en tiempo real</p>
+                
+                <div class="demo-container">
+                    <!-- Inputs -->
+                    <div class="demo-inputs">
+                        <div class="form-group">
+                            <label for="prompt">Tu Pregunta:</label>
+                            <textarea 
+                                id="prompt" 
+                                placeholder="Escribe tu pregunta aquí... (ej: ¿Cómo funciona el aprendizaje profundo?)"
+                                aria-label="Campo de entrada para preguntas"
+                            ></textarea>
+                        </div>
+
+                        <div class="controls">
+                            <div class="control-group">
+                                <label for="temperature">Creatividad (Temperature): <span id="tempValue">0.7</span></label>
+                                <input type="range" id="temperature" min="0" max="2" step="0.1" value="0.7" aria-label="Control de creatividad">
+                                <small>0 = Preciso | 0.7 = Balanceado | 2 = Creativo</small>
+                            </div>
+
+                            <div class="control-group">
+                                <label for="maxTokens">Máx. Tokens: <span id="tokenValue">256</span></label>
+                                <input type="range" id="maxTokens" min="50" max="2048" step="50" value="256" aria-label="Control de tokens máximos">
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary btn-large" id="generateBtn" aria-label="Generar respuesta">
+                            <span class="btn-text">Generar Respuesta</span>
+                            <span class="btn-loader hidden">⏳ Generando...</span>
+                        </button>
+                    </div>
+
+                    <!-- Output -->
+                    <div class="demo-output">
+                        <div class="output-header">
+                            <h3>Respuesta de IA</h3>
+                            <button class="copy-btn" id="copyBtn" aria-label="Copiar respuesta" style="display: none;">
+                                📋 Copiar
+                            </button>
+                        </div>
+                        <div class="output-content" id="output">
+                            <p class="placeholder">La respuesta aparecerá aquí...</p>
+                        </div>
+                        <div class="stats" id="stats" style="display: none;">
+                            <span class="stat">⚡ Tokens: <strong id="tokenCount">0</strong></span>
+                            <span class="stat">⏱️ Tiempo: <strong id="timeElapsed">0s</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Características Section -->
+        <section class="features" id="características">
+            <div class="container">
+                <h2>Características Principales</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>🧠 Arquitectura Neural</h3>
+                        <p>Funciones de activación completas: Sigmoid, ReLU, GELU, Tanh, ELU, Swish</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>⚙️ Pesos Inteligentes</h3>
+                        <p>Xavier, He, LeCun, Orthogonal initialization para convergencia óptima</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🚀 Production-Ready</h3>
+                        <p>Quantización 4-bit, Mixed Precision, deployment con Docker incluido</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>📚 Sistema RAG</h3>
+                        <p>Retrieval-Augmented Generation para mejor contexto y precisión</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>💾 Gratuito</h3>
+                        <p>0% de costo. Modelo Mistral 7B abierto y sin restricciones</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>⚡ Rápido</h3>
+                        <p>Optimizado para GPU/CPU con caché inteligente y comprensión GZIP</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq">
+            <div class="container">
+                <h2>Preguntas Frecuentes</h2>
+                <div class="faq-grid">
+                    <details class="faq-item">
+                        <summary>¿Cuál es la diferencia con Claude o ChatGPT?</summary>
+                        <div class="faq-content">
+                            <p>AI Engine usa el modelo Mistral 7B, más pequeño pero altamente optimizado. Es gratuito, de código abierto y diseñado para deployment en producción.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>¿Requiere GPU?</summary>
+                        <div class="faq-content">
+                            <p>Funciona en CPU y GPU. Con GPU NVIDIA es 10-50x más rápido. La quantización 4-bit reduce memoria a 4GB en GPU.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>¿Cómo funciona el Sistema RAG?</summary>
+                        <div class="faq-content">
+                            <p>RAG busca documentos relevantes en tu base de conocimiento y los usa como contexto. Mejora precisión hasta 40% en respuestas específicas.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>¿Puedo usarlo en producción?</summary>
+                        <div class="faq-content">
+                            <p>Sí, está diseñado para producción. Incluye Docker, logging, health checks, validación robusta y API REST optimizada.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto Section -->
+        <section class="contact" id="contacto">
+            <div class="container">
+                <h2>Conecta Conmigo</h2>
+                <p class="section-subtitle">¡Contribuye, reporta bugs o colabora en el proyecto!</p>
+                
+                <div class="contact-grid">
+                    <a href="https://github.com/Yeremyyy" class="contact-card" aria-label="Perfil GitHub">
+                        <span class="contact-icon">🐙</span>
+                        <h3>GitHub</h3>
+                        <p>@Yeremyyy</p>
+                    </a>
+                    <a href="https://github.com/Yeremyyy/AI-Practice" class="contact-card" aria-label="Repositorio del proyecto">
+                        <span class="contact-icon">📦</span>
+                        <h3>Repositorio</h3>
+                        <p>AI-Practice</p>
+                    </a>
+                    <a href="mailto:zackusskgg@gmail.com" class="contact-card" aria-label="Enviar email">
+                        <span class="contact-icon">✉️</span>
+                        <h3>Email</h3>
+                        <p>zackusskgg@gmail.com</p>
+                    </a>
+                    <a href="https://twitter.com/Yeremyyy" class="contact-card" aria-label="Perfil Twitter">
+                        <span class="contact-icon">𝕏</span>
+                        <h3>Twitter</h3>
+                        <p>@Yeremyyy</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h4>AI Engine</h4>
+                <p>Motor IA Production-Ready, gratuito y potente</p>
+            </div>
+            <div class="footer-section">
+                <h4>Links</h4>
+                <ul>
+                    <li><a href="https://github.com/Yeremyyy/AI-Practice">GitHub</a></li>
+                    <li><a href="/api/docs">API Docs</a></li>
+                    <li><a href="https://github.com/Yeremyyy/AI-Practice#readme">README</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Desarrollado por</h4>
+                <p><strong>Yeremyyy</strong> | Web & AI Developer</p>
+                <p style="font-size: 0.9rem; margin-top: 0.5rem;">© 2026 - Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts (async para mejor performance) -->
+    <script async src="/static/app.js"></script>
+
+    <!-- Schema.org para mejor SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "AI Engine",
+        "description": "Motor IA Production-Ready al nivel de Claude Opus",
+        "url": "https://ai-engine.example.com",
+        "author": {
+            "@type": "Person",
+            "name": "Yeremyyy"
+        },
+        "applicationCategory": "DeveloperApplication",
+        "offers": {
+            "@type": "Offer",
+            "price": "0"
+        }
+    }
+    </script>
+</body>
+</html>
