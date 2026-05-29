@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  ai-engine:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ai-engine-api
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PORT=8000
+      - HOST=0.0.0.0
+      - CUDA_VISIBLE_DEVICES=0  # GPU 0, cambiar según necesidad
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./models:/app/models
+    # GPU support (si tienes docker-compose v1.28.0+)
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    # Health check
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    # Restart policy
+    restart: unless-stopped
+    # Resource limits (opcional)
+    # mem_limit: 16gb
+    # cpus: 4
+
+  # Opcional: Reverse proxy con Nginx
+  # nginx:
+  #   image: nginx:alpine
+  #   ports:
+  #     - "80:80"
+  #     - "443:443"
+  #   volumes:
+  #     - ./nginx.conf:/etc/nginx/nginx.conf
+  #   depends_on:
+  #     - ai-engine
+  #   restart: unless-stopped
+
+volumes:
+  data:
+  logs:
+  models:
+
+networks:
+  default:
+    name: ai-network
